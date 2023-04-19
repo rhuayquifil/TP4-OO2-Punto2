@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 import ar.unrn.domain.portsin.DomainException;
+import ar.unrn.domain.portsin.Empleado;
 import ar.unrn.domain.portsin.Registro;
 
 public class EmpleadoRegistro implements Registro {

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import ar.unrn.domain.portsin.Empleado;
+
 public class Empleados {
 
 	private Set<Empleado> listaEmpleados;
