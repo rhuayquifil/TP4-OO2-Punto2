@@ -1,7 +1,8 @@
-package ar.unrn.domain.model;
+package ar.unrn.infrastructure.data;
 
 import java.util.Properties;
 
+import ar.unrn.domain.portsout.Notificacion;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.PasswordAuthentication;

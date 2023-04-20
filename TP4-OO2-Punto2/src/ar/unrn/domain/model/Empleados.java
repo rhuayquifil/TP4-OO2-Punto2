@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-import ar.unrn.domain.portsin.Empleado;
+import ar.unrn.domain.portsout.Empleado;
+import ar.unrn.domain.portsout.Notificacion;
 
 public class Empleados {
 
@@ -32,6 +33,11 @@ public class Empleados {
 				notificacion.enviarCorreo("", "", "", "");
 			}
 		}
+	}
+
+	public Empleados listaCumpleañeros() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

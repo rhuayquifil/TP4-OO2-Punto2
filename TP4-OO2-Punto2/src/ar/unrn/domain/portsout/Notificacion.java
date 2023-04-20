@@ -1,4 +1,4 @@
-package ar.unrn.domain.model;
+package ar.unrn.domain.portsout;
 
 public interface Notificacion {
 

@@ -1,48 +1,21 @@
 package ar.unrn.domain.model;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
-
-import ar.unrn.domain.portsin.DomainException;
-import ar.unrn.domain.portsin.Empleado;
 import ar.unrn.domain.portsin.Registro;
+import ar.unrn.domain.portsout.DomainException;
+import ar.unrn.domain.portsout.LectorArchivo;
+import ar.unrn.domain.portsout.Notificacion;
 
 public class EmpleadoRegistro implements Registro {
 
 	private Empleados empleados;
 	private Notificacion notificacion;
+	private LectorArchivo lectorArchivo;
 
-	public EmpleadoRegistro(String urlArchivo, Notificacion notificacion) throws DomainException {
+	public EmpleadoRegistro(LectorArchivo lectorArchivo, Notificacion notificacion) throws DomainException {
 		super();
-
-		this.empleados = new Empleados();
 		this.notificacion = notificacion;
-
-		try {
-			String cadena;
-
-			FileReader f = new FileReader(urlArchivo);
-
-			BufferedReader b = new BufferedReader(f);
-
-			while ((cadena = b.readLine()) != null) {
-				String[] parts = cadena.split(", ");
-				empleados.agregar(new Empleado(parts[0], parts[1], new HelpDate(parts[2]), parts[3]));
-			}
-
-			b.close();
-		} catch (FileNotFoundException e) {
-			throw new DomainException("EmpleadoRegistro FileNotFoundException");
-		} catch (IOException e) {
-			throw new DomainException("EmpleadoRegistro IOException");
-		} catch (NullPointerException e) {
-			throw new DomainException("EmpleadoRegistro NullPointerException");
-		} catch (ParseException e) {
-			throw new DomainException("EmpleadoRegistro ParseException");
-		}
+		this.empleados = new Empleados();
+		this.lectorArchivo = lectorArchivo;
 	}
 
 	@Override
@@ -52,6 +25,6 @@ public class EmpleadoRegistro implements Registro {
 
 	@Override
 	public void enviarMailDeFelicitacionesACumplañeros() {
-		empleados.enviarMailDeFelizCumpleaños(notificacion);
+		lectorArchivo.empleadosQueCumplenAniosHoy();
 	}
 }
