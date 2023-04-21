@@ -4,4 +4,6 @@ public interface Registro {
 
 	void enviarMailDeFelicitacionesACumplañeros();
 
+	int cantidadDeCumpleañerosDeHoy();
+
 }
