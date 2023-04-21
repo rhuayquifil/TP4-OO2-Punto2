@@ -1,8 +1,8 @@
 package ar.unrn.domain.portsout;
 
-import ar.unrn.domain.model.Empleados;
+import java.util.List;
 
 public interface LectorArchivo {
 
-	Empleados empleadosQueCumplenAniosHoy();
+	List<Empleado> empleadosQueCumplenAniosHoy();
 }

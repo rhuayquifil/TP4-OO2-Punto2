@@ -15,8 +15,6 @@ public class Main {
 					new EnDiscoLectorArchivo("C:\\Users\\ezehu\\git\\TP4-OO2-Punto2\\DataEmpleado.txt"),
 					new EmailNotificacion("524def57d07409", "a0f84bcbd4913c", "sandbox.smtp.mailtrap.io"));
 
-//			System.out.println(registroEmpleados.toString());
-
 			registroEmpleados.enviarMailDeFelicitacionesACumplañeros();
 		} catch (DomainException | InfrastructureException e) {
 			System.out.println(e.getMessage());

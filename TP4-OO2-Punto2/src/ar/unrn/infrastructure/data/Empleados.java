@@ -1,11 +1,12 @@
-package ar.unrn.domain.model;
+package ar.unrn.infrastructure.data;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import ar.unrn.domain.portsout.Empleado;
-import ar.unrn.domain.portsout.Notificacion;
 
 public class Empleados {
 
@@ -25,19 +26,16 @@ public class Empleados {
 		return "Empleados [listaEmpleados=" + listaEmpleados + "]";
 	}
 
-	public void enviarMailDeFelizCumpleaños(Notificacion notificacion) {
+	public List<Empleado> listaCumpleañerosDeLaFecha() {
+		List<Empleado> listaCumpleañeros = new ArrayList<Empleado>();
+
 		LocalDate fechaHoy = LocalDate.now();
 
 		for (Empleado empleado : listaEmpleados) {
 			if (fechaHoy.equals(empleado.fechaNacimiento())) {
-				notificacion.enviarCorreo("", "", "", "");
+				listaCumpleañeros.add(empleado);
 			}
 		}
+		return listaCumpleañeros;
 	}
-
-	public Empleados listaCumpleañeros() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

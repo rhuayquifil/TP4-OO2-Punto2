@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 
-import ar.unrn.domain.model.Empleados;
 import ar.unrn.domain.model.HelpDate;
 import ar.unrn.domain.portsout.Empleado;
 import ar.unrn.domain.portsout.LectorArchivo;
@@ -44,10 +44,7 @@ public class EnDiscoLectorArchivo implements LectorArchivo {
 	}
 
 	@Override
-	public Empleados empleadosQueCumplenAniosHoy() {
-//		Empleados listaCumpleañeros = new Empleados();
-//	
-//		return listaCumpleañeros;
-		return empleados.listaCumpleañeros();
+	public List<Empleado> empleadosQueCumplenAniosHoy() {
+		return empleados.listaCumpleañerosDeLaFecha();
 	}
 }
