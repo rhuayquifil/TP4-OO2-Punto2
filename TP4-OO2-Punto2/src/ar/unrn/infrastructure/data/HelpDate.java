@@ -1,8 +1,10 @@
-package ar.unrn.domain.model;
+package ar.unrn.infrastructure.data;
 
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import ar.unrn.domain.portsout.Fecha;
 
 public class HelpDate implements Fecha {
 

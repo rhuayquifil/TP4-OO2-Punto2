@@ -5,7 +5,6 @@ import ar.unrn.domain.portsin.Registro;
 import ar.unrn.domain.portsout.DomainException;
 import ar.unrn.infrastructure.data.EmailNotificacion;
 import ar.unrn.infrastructure.data.EnDiscoLectorArchivo;
-import ar.unrn.infrastructure.data.InfrastructureException;
 
 public class Main {
 
@@ -16,7 +15,7 @@ public class Main {
 					new EmailNotificacion("524def57d07409", "a0f84bcbd4913c", "sandbox.smtp.mailtrap.io"));
 
 			registroEmpleados.enviarMailDeFelicitacionesACumplañeros();
-		} catch (DomainException | InfrastructureException e) {
+		} catch (DomainException e) {
 			System.out.println(e.getMessage());
 		}
 	}

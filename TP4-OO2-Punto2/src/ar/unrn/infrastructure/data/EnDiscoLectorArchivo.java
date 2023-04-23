@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
-import ar.unrn.domain.model.HelpDate;
+import ar.unrn.domain.portsout.DomainException;
 import ar.unrn.domain.portsout.Empleado;
 import ar.unrn.domain.portsout.LectorArchivo;
 
@@ -15,7 +15,7 @@ public class EnDiscoLectorArchivo implements LectorArchivo {
 
 	private Empleados empleados;
 
-	public EnDiscoLectorArchivo(String urlArchivo) throws InfrastructureException {
+	public EnDiscoLectorArchivo(String urlArchivo) throws DomainException {
 
 		this.empleados = new Empleados();
 
@@ -33,13 +33,13 @@ public class EnDiscoLectorArchivo implements LectorArchivo {
 
 			b.close();
 		} catch (FileNotFoundException e) {
-			throw new InfrastructureException("EnDiscoLectorArchivo FileNotFoundException");
+			throw new DomainException("EnDiscoLectorArchivo FileNotFoundException");
 		} catch (IOException e) {
-			throw new InfrastructureException("EnDiscoLectorArchivo IOException");
+			throw new DomainException("EnDiscoLectorArchivo IOException");
 		} catch (NullPointerException e) {
-			throw new InfrastructureException("EnDiscoLectorArchivo NullPointerException");
+			throw new DomainException("EnDiscoLectorArchivo NullPointerException");
 		} catch (ParseException e) {
-			throw new InfrastructureException("EnDiscoLectorArchivo ParseException");
+			throw new DomainException("EnDiscoLectorArchivo ParseException");
 		}
 	}
 

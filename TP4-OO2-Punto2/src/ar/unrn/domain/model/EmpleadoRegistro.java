@@ -24,9 +24,4 @@ public class EmpleadoRegistro implements Registro {
 					"Felicitaciones " + empleado.nombre(), "Que todos tus deseos se hagan realidad");
 		}
 	}
-
-	@Override
-	public int cantidadDeCumpleañerosDeHoy() {
-		return lectorArchivo.empleadosQueCumplenAniosHoy().size();
-	}
 }
