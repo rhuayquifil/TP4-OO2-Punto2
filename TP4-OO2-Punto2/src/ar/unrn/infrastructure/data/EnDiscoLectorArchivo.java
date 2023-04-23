@@ -26,10 +26,7 @@ public class EnDiscoLectorArchivo implements LectorArchivo {
 
 			BufferedReader b = new BufferedReader(f);
 
-			while ((cadena = b.readLine()) != null) {
-				String[] parts = cadena.split(", ");
-				empleados.agregar(new Empleado(parts[0], parts[1], new HelpDate(parts[2]), parts[3]));
-			}
+			agregarEmpleados(b);
 
 			b.close();
 		} catch (FileNotFoundException e) {
@@ -40,6 +37,14 @@ public class EnDiscoLectorArchivo implements LectorArchivo {
 			throw new DomainException("EnDiscoLectorArchivo NullPointerException");
 		} catch (ParseException e) {
 			throw new DomainException("EnDiscoLectorArchivo ParseException");
+		}
+	}
+
+	private void agregarEmpleados(BufferedReader b) throws IOException, ParseException {
+		String cadena;
+		while ((cadena = b.readLine()) != null) {
+			String[] parts = cadena.split(", ");
+			empleados.agregar(new Empleado(parts[0], parts[1], new HelpDate(parts[2]), parts[3]));
 		}
 	}
 

@@ -32,10 +32,15 @@ public class Empleados {
 		LocalDate fechaHoy = LocalDate.now();
 
 		for (Empleado empleado : listaEmpleados) {
-			if (fechaHoy.equals(empleado.fechaNacimiento())) {
-				listaCumpleañeros.add(empleado);
-			}
+			sonFechasIguales(listaCumpleañeros, fechaHoy, empleado);
 		}
+
 		return listaCumpleañeros;
+	}
+
+	private void sonFechasIguales(List<Empleado> listaCumpleañeros, LocalDate fechaHoy, Empleado empleado) {
+		if (fechaHoy.equals(empleado.fechaNacimiento())) {
+			listaCumpleañeros.add(empleado);
+		}
 	}
 }
