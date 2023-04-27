@@ -7,15 +7,15 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
-import ar.unrn.domain.portsin.DomainException;
 import ar.unrn.domain.portsout.Empleado;
+import ar.unrn.domain.portsout.InfrastructureExceptions;
 import ar.unrn.domain.portsout.LeerDatos;
 
 public class EnDiscoLeerDatos implements LeerDatos {
 
 	private Empleados empleados;
 
-	public EnDiscoLeerDatos(String urlArchivo) throws DomainException {
+	public EnDiscoLeerDatos(String urlArchivo) throws InfrastructureExceptions {
 
 		this.empleados = new Empleados();
 
@@ -30,13 +30,13 @@ public class EnDiscoLeerDatos implements LeerDatos {
 
 			b.close();
 		} catch (FileNotFoundException e) {
-			throw new DomainException("EnDiscoLectorArchivo FileNotFoundException");
+			throw new InfrastructureExceptions("EnDiscoLectorArchivo FileNotFoundException");
 		} catch (IOException e) {
-			throw new DomainException("EnDiscoLectorArchivo IOException");
+			throw new InfrastructureExceptions("EnDiscoLectorArchivo IOException");
 		} catch (NullPointerException e) {
-			throw new DomainException("EnDiscoLectorArchivo NullPointerException");
+			throw new InfrastructureExceptions("EnDiscoLectorArchivo NullPointerException");
 		} catch (ParseException e) {
-			throw new DomainException("EnDiscoLectorArchivo ParseException");
+			throw new InfrastructureExceptions("EnDiscoLectorArchivo ParseException");
 		}
 	}
 
