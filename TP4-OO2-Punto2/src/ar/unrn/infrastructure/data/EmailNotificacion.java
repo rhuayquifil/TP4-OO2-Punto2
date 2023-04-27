@@ -2,6 +2,7 @@ package ar.unrn.infrastructure.data;
 
 import java.util.Properties;
 
+import ar.unrn.domain.portsout.InfrastructureExceptions;
 import ar.unrn.domain.portsout.Notificacion;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
@@ -26,7 +27,7 @@ public class EmailNotificacion implements Notificacion {
 
 	@Override
 	public void enviarCorreo(String correoRemitente, String correoDestinatario, String contenidoSujeto,
-			String contenidoMensaje) {
+			String contenidoMensaje) throws InfrastructureExceptions {
 
 		// configure Mailtrap's SMTP server details
 		Properties props = new Properties();
@@ -60,7 +61,7 @@ public class EmailNotificacion implements Notificacion {
 
 //					System.out.println("Email Message Sent Successfully");
 		} catch (MessagingException e) {
-			throw new RuntimeException(e);
+			throw new InfrastructureExceptions("No se pudo eviar mail");
 		}
 
 	}

@@ -7,15 +7,15 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
-import ar.unrn.domain.portsout.DomainException;
+import ar.unrn.domain.portsin.DomainException;
 import ar.unrn.domain.portsout.Empleado;
-import ar.unrn.domain.portsout.LectorArchivo;
+import ar.unrn.domain.portsout.LeerDatos;
 
-public class EnDiscoLectorArchivo implements LectorArchivo {
+public class EnDiscoLeerDatos implements LeerDatos {
 
 	private Empleados empleados;
 
-	public EnDiscoLectorArchivo(String urlArchivo) throws DomainException {
+	public EnDiscoLeerDatos(String urlArchivo) throws DomainException {
 
 		this.empleados = new Empleados();
 

@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import ar.unrn.domain.model.EmpleadoRegistro;
+import ar.unrn.domain.portsin.DomainException;
 import ar.unrn.domain.portsin.Registro;
-import ar.unrn.domain.portsout.DomainException;
 
 class PruebasUnitarias {
 
@@ -20,7 +20,7 @@ class PruebasUnitarias {
 					new FakeEnDiscoLectorArchivo("C:\\Users\\ezehu\\git\\TP4-OO2-Punto2\\DataEmpleado.txt"),
 					fakeNotificacion);
 
-			registroEmpleados.enviarMailDeFelicitacionesACumplañeros();
+			registroEmpleados.enviarMailDeFelicitacionesACumplaneros();
 
 			assertEquals(3, fakeNotificacion.cantidadDeEmailsMandados());
 

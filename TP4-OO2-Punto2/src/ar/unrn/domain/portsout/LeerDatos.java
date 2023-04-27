@@ -2,7 +2,7 @@ package ar.unrn.domain.portsout;
 
 import java.util.List;
 
-public interface LectorArchivo {
+public interface LeerDatos {
 
 	List<Empleado> empleadosQueCumplenAniosHoy();
 }
